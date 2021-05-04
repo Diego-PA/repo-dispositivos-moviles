@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ScrollingActivity">
+
+    <!--Se va a traer todos los componentes de content_scrolling.xml-->
+    <include
+        android:id="@+id/content"
+        layout="@layout/content_scrolling" />
+
+    <!--La barrita de hasta abajo-->
+    <com.google.android.material.bottomappbar.BottomAppBar
+    
+        android:id="@+id/buttomappbar1"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="bottom"
+
+        app:menu="@menu/menu_scrolling"
+        app:navigationIcon="@drawable/ic_baseline_duo" 
+    
+    />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+        android:id="@+id/floatingactionbutton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_filter_drama"
+        app:layout_anchor="@id/buttomappbar1"
+        
+    />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

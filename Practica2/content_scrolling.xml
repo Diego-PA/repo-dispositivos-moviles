@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--IMPORTANTE: Esta es una plantilla que se manda a llamar en activity_scrolling.xml-->
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ScrollingActivity"
+    tools:showIn="@layout/activity_scrolling">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialcardview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginStart="@dimen/common_padding_min"
+            android:layout_marginTop="@dimen/common_padding_min"
+            android:layout_marginEnd="@dimen/common_padding_min"
+
+
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="visible"
+            >
+
+            <!--Abrimos un constraint layout que ocupa toda la card view-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/common_padding_default"
+                android:paddingTop="@dimen/common_padding_default"
+                android:paddingEnd="@dimen/common_padding_default"
+
+                >
+
+                <!--Layout para ingresar los componentes que interactuan con el texto-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputlayout1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/nombredocente"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <EditText
+                        android:id="@+id/edittext1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <ImageView
+                    android:id="@+id/imageview1"
+                    android:layout_width="150dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="@dimen/common_padding_min"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textinputlayout1"
+
+
+                    />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/common_padding_default"
+
+                    android:text="@string/card_enable_text"
+                    app:layout_constraintStart_toEndOf="@id/imageview1"
+                    app:layout_constraintTop_toBottomOf="@id/textinputlayout1"
+
+                    />
+
+                <Button
+                    android:id="@+id/button1"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="@dimen/derecha_imagen"
+                    android:layout_marginTop="@dimen/abajo_imagen"
+                    android:text="@string/card_toggle_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageview1"
+                    app:layout_constraintTop_toBottomOf="@id/textinputlayout1"
+
+                    />
+
+                <Button
+                    android:id="@+id/button2"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="@dimen/separacion"
+                    android:text="@string/card_toggle_2"
+                    app:layout_constraintEnd_toEndOf="@id/button1"
+                    app:layout_constraintStart_toEndOf="@id/imageview1"
+                    app:layout_constraintStart_toStartOf="@+id/button1"
+
+                    app:layout_constraintTop_toBottomOf="@id/button1"
+
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
